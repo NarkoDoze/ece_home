@@ -1,0 +1,8 @@
+{% extends 'block.html' %}
+{% block content %}
+글목록<br>
+    {% for post in recent %}
+        {{ post.title }}<br>
+        {{ post.author }}<br>
+    {% endfor %}
+{% endblock %}
