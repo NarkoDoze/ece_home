@@ -1,8 +1,36 @@
 {% extends 'block.html' %}
+{% load staticfiles %}
 {% block content %}
-글목록<br>
-    {% for post in recent %}
-        {{ post.title }}<br>
-        {{ post.author }}<br>
-    {% endfor %}
+    <div class="ui container" style="padding-top: 100px;">
+    <h1 class="ui dividing header">{{ title }}</h1>
+    <div class="ui items">
+        {% for post in recent %}
+            <div class="item">
+                <div class="image">
+                    <img src="/static/img/test.png">
+                </div>
+                <div class="content">
+                    <a class="header">{{ post.title }}</a>
+                    <div class="meta">
+                        <span>{{ post.content }}</span>
+                    </div>
+                    <div class="description">
+                        <p></p>
+                    </div>
+                    <div class="extra">
+                        {{ post.author }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="ui pagination menu listnum">
+        <a class="active item">1</a>
+        <div class="disabled item">...</div>
+        <a class="item">10</a>
+        <a class="item">11</a>
+        <a class="item">12</a>
+    </div>
+    </div>
 {% endblock %}
+
