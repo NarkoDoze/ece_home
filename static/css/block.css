@@ -1,6 +1,7 @@
+
 header[role="banner"] #logo-main {
   display: block;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 #navbar-primary.navbar-default {
   background: transparent;
@@ -13,10 +14,15 @@ header[role="banner"] #logo-main {
 #navbar-primary.navbar-default .navbar-nav > li {
   display: inline-block;
   float: none;
+
 }
 #navbar-primary.navbar-default .navbar-nav > li > a {
   padding-left: 30px;
   padding-right: 30px;
+  color: white;
+  font-family: comic sans;
+  font-stretch: expanded;
+  letter-spacing: 2px;
 }
 .listnum {
     float: right;
@@ -28,4 +34,9 @@ header[role="banner"] #logo-main {
 .carousel-control.left, .carousel-control.right {
    background-image:none !important;
    filter:none !important;
+}
+
+
+header {
+  background-color: #0088ff;
 }
