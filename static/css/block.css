@@ -1,7 +1,8 @@
 
-header[role="banner"] #logo-main {
+#logo-main {
   display: block;
-  margin: 10px auto;
+  margin: 0 auto;
+  padding: 5vh 0;
 }
 #navbar-primary.navbar-default {
   background: transparent;
