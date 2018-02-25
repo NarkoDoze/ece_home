@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Sroom1
 
-# Register your models here.
+@admin.register(Sroom1)
+class Sroom1Admin(admin.ModelAdmin):
+    list_display = ['reserved', 'name1', 'sid1', 'name2', 'sid2']
+    list_display_links = ['reserved']

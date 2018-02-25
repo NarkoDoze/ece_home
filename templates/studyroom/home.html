@@ -1,0 +1,10 @@
+{% extends 'block.html' %}
+{% load staticfiles %}
+{% block content %}
+<div>
+    <h1>스터디룸</h1>
+    {% for sr in sroom %}
+        <a href="studyroom/{{ sr.var }}">{{ sr.name }}</a><br>
+    {% endfor %}
+</div>
+{% endblock %}
