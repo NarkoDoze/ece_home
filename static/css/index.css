@@ -12,6 +12,7 @@
 
 }
 
+
 .main-contants {
   margin-top: 10vh;
   display: flex;
@@ -24,17 +25,39 @@
 .footer-container {
   width: 100%;
   background-color: grey;
-  height: 20vh;
+  height: 23vh;
   color : white;
   text-align: center;
   margin-top: 30vh;
-  padding-top: 5vh;
+  padding-top: 3vh;
 }
 
 .ui.table {
   border-top: .2em solid #0088ff !important;
+  margin-bottom: 5vh !important;
 }
 
 th, td {
   padding: 3vh;
+}
+
+#footer-logo {
+    display: inline-block;
+    width: 10%;
+    padding-bottom: 3vh;
+}
+
+.banner {
+  /* display: inline-block; */
+  width: 17%;
+  height : 13vh;
+  background-color: grey;
+}
+
+.banner-container {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
