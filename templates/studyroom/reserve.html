@@ -3,6 +3,8 @@
 {% block content %}
 <div>
     <h1>{{ name }}</h1>
+    <form method="post" action="/studyroom/{{ var }}">
+    {% csrf_token %}
     {% for day in table %}
         <h3>{{ day.name }}</h3><br>
         <table id="reservation_time" style="width:1000px">
@@ -37,9 +39,25 @@
             <tbody id="reservation_time_block">
             <tr>
                 {% for h in day.heatmap %}
-                    <td class="{% if h %}unavailable{% else %}reserved{% endif %}" style="user-select: none;">&nbsp;</td>
+                    <td name="{{ day.name }}-{{ h.id }}" class="{% if h.check %}unavailable{% else %}reserved{% endif %}" style="user-select: none;"> </td>
                 {% endfor %}
             </tr></tbody></table>
     {% endfor %}
+    <div style="padding-top:10px;">
+        <div class="ui input">
+            <input name="sid" type="text" placeholder="Student ID">
+        </div>
+        <div class="ui input">
+            <input name="name" type="text" placeholder="Name">
+        </div>
+        <div class="ui input">
+            <input name="sid" type="text" placeholder="Student ID">
+        </div>
+        <div class="ui input">
+            <input name="name" type="text" placeholder="Name">
+        </div>
+    </div>
+    <button type="submit" class="ui primary button"> Submit </button>
+    </form>
 </div>
 {% endblock %}

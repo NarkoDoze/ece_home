@@ -45,10 +45,14 @@
 <script>
     $(document).ready(function() {
         $('.reserved').click(function() {
-            if(this.className == "reserved")
+            if(this.className == "reserved"){
                 this.className = "selected";
-            else
+                this.innerHTML = "<input type='hidden' name='select' value='" + this.getAttribute('name')  + "'/>";
+            }
+            else {
                 this.className = "reserved";
+                this.innerHTML = "";
+            }
         });
     });
 </script>

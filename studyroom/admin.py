@@ -3,5 +3,5 @@ from .models import Sroom1
 
 @admin.register(Sroom1)
 class Sroom1Admin(admin.ModelAdmin):
-    list_display = ['reserved', 'name1', 'sid1', 'name2', 'sid2']
+    list_display = ['reserved', 'sid']
     list_display_links = ['reserved']
