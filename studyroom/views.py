@@ -4,22 +4,22 @@ import datetime
 
 # Create your views here.
 def sroom_home(request):
-    params = {'title': '스터디룸'}
+    params = {'title': 'StudyRoom Reservation'}
     params['sroom'] = index.sroomIndex
     return render(request, 'studyroom/home.html', params)
 
 def sroom_rsv(request, idx):
-    params = {'title': '스터디룸 예약'}
+    params = {'title': 'StudyRoom Reservation'}
     if request.method == "POST":
         query = dict(request.POST)
         if not {'sid': query['sid'][0], 'name': query['name'][0]} in index.sidIndex:
-            params['error'] = query['sid'][0] + " " + query['name'][0] + " 등록되지 않은 학번입니다."
+            params['error'] = query['name'][0] + "(" + query['sid'][0] + ")" + " is not registered."
             return render(request, 'error.html', params)
         if not {'sid': query['sid'][1], 'name': query['name'][1]} in index.sidIndex:
-            params['error'] = query['sid'][1] + " " + query['name'][1] + " 등록되지 않은 학번입니다."
+            params['error'] = query['name'][1] + "(" + query['sid'][1] + ")" + " is not registered."
             return render(request, 'error.html', params)
         if query['sid'][0] == query['sid'][1]:
-            params['error'] = "같은 학번을 사용하실수 없습니다."
+            params['error'] = "You cannot use same student ID."
             return render(request, 'error.html', params)
 
         selectDate = []
@@ -29,7 +29,7 @@ def sroom_rsv(request, idx):
 
         selectNum = len(selectDate)
         if selectNum > 3:
-            params['error'] = "3시간 이하만 선택 가능합니다."
+            params['error'] = "You can select under 3 hours."
             return render(request, 'error.html', params)
 
         for sroom in index.sroomIndex:
@@ -52,7 +52,7 @@ def sroom_rsv(request, idx):
                 )
 
                 if len(rsvlist) + selectNum > 3:
-                    params['error'] = query['sid'][0] + " " + query['name'][0] + " 대여 시간(3시간)을 초과하였습니다."
+                    params['error'] = query['name'][0] + "(" + query['sid'][0] + ")" + " exceeds 3 hours today."
                     return render(request, 'error.html', params)
 
                 rsvlist = sroom['model'].objects.filter(
@@ -61,7 +61,7 @@ def sroom_rsv(request, idx):
                 )
 
                 if len(rsvlist) + selectNum > 3:
-                    params['error'] = query['sid'][1] + " " + query['name'][1] + " 대여 시간(3시간)을 초과하였습니다."
+                    params['error'] = query['name'][1] + "(" + query['sid'][1] + ")" + " exceeds 3 hours today."
                     return render(request, 'error.html', params)
 
                 for date in selectDate:
@@ -80,7 +80,7 @@ def sroom_rsv(request, idx):
                         sid=query['sid'][0],
                     ).save()
 
-                params['error'] = "성공적으로 신청되었습니다."
+                params['error'] = "Successfully reserved."
                 return render(request, 'error.html', params)
 
         return redirect('/home')
@@ -117,6 +117,6 @@ def sroom_rsv(request, idx):
     return render(request, 'example.html', params)
 
 def sroom_chk(request):
-    params = {'title': '스터디룸 확인'}
+    params = {'title': 'StudyRoom Checking'}
     # TODO: Get student id and check it
     return render(request, 'example.html', params)
