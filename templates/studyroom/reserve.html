@@ -6,10 +6,10 @@
 </head>
 <div class="container">
   <div class="ui top attached tabular menu">
-    <a class="active item">
+    <a class="active item" href="/studyroom/sroom1">
       Study room 1
     </a>
-    <a class="item">
+    <a class="item" href="/studyroom/sroom2">
       Study room 2
     </a>
   </div>
@@ -18,71 +18,99 @@
     {% csrf_token %}
     <br>
     {% for day in table %}
-        <!-- <div class="ui blue basic button">{{ day.name }}</div> -->
-        <div class="ui tag label">{{ day.name }}</div>
-        <!-- <a class="ui label">{{ day.name }}</a> -->
-        <br><br>
-        <table id="reservation_time">
-            <thead>
-            <tr>
-                <td class="time-number" colspan="1">00</td>
-                <td class="time-number" colspan="1">01</td>
-                <td class="time-number" colspan="1">02</td>
-                <td class="time-number" colspan="1">03</td>
-                <td class="time-number" colspan="1">04</td>
-                <td class="time-number" colspan="1">05</td>
-                <td class="time-number" colspan="1">06</td>
-                <td class="time-number" colspan="1">07</td>
-                <td class="time-number" colspan="1">08</td>
-                <td class="time-number" colspan="1">09</td>
-                <td class="time-number" colspan="1">10</td>
-                <td class="time-number" colspan="1">11</td>
-                <td class="time-number" colspan="1">12</td>
-                <td class="time-number" colspan="1">13</td>
-                <td class="time-number" colspan="1">14</td>
-                <td class="time-number" colspan="1">15</td>
-                <td class="time-number" colspan="1">16</td>
-                <td class="time-number" colspan="1">17</td>
-                <td class="time-number" colspan="1">18</td>
-                <td class="time-number" colspan="1">19</td>
-                <td class="time-number" colspan="1">20</td>
-                <td class="time-number" colspan="1">21</td>
-                <td class="time-number" colspan="1">22</td>
-                <td class="time-number" colspan="1">23</td>
-            </tr>
-            </thead>
-            <tbody id="reservation_time_block">
-            <tr>
-                {% for h in day.heatmap %}
-                    <td name="{{ day.name }}-{{ h.id }}" class="{% if h.check %}unavailable{% else %}reserved{% endif %} time-block" style="user-select: none;"> </td>
-                {% endfor %}
-            </tr></tbody></table>
+        <div>
+            <!-- <div class="ui blue basic button">{{ day.name }}</div> -->
+            <div class="ui tag label">{{ day.name }}</div>
+            <!-- <a class="ui label">{{ day.name }}</a> -->
+            <table id="reservation_time">
+                <thead>
+                <tr>
+                    <td class="time-number" colspan="1">00</td>
+                    <td class="time-number" colspan="1">01</td>
+                    <td class="time-number" colspan="1">02</td>
+                    <td class="time-number" colspan="1">03</td>
+                    <td class="time-number" colspan="1">04</td>
+                    <td class="time-number" colspan="1">05</td>
+                    <td class="time-number" colspan="1">06</td>
+                    <td class="time-number" colspan="1">07</td>
+                    <td class="time-number" colspan="1">08</td>
+                    <td class="time-number" colspan="1">09</td>
+                    <td class="time-number" colspan="1">10</td>
+                    <td class="time-number" colspan="1">11</td>
+                    <td class="time-number" colspan="1">12</td>
+                    <td class="time-number" colspan="1">13</td>
+                    <td class="time-number" colspan="1">14</td>
+                    <td class="time-number" colspan="1">15</td>
+                    <td class="time-number" colspan="1">16</td>
+                    <td class="time-number" colspan="1">17</td>
+                    <td class="time-number" colspan="1">18</td>
+                    <td class="time-number" colspan="1">19</td>
+                    <td class="time-number" colspan="1">20</td>
+                    <td class="time-number" colspan="1">21</td>
+                    <td class="time-number" colspan="1">22</td>
+                    <td class="time-number" colspan="1">23</td>
+                </tr>
+                </thead>
+                <tbody id="reservation_time_block">
+                    <tr>
+                        {% for h in day.heatmap %}
+                            <td name="{{ day.name }}-{{ h.id }}" class="{% if h.check %}unavailable{% else %}reserved{% endif %} time-block" style="user-select: none;"> </td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
             <br><br>
+        </div>
     {% endfor %}
-    <div style="padding-top:10px;">
-        <div class="ui input">
-            <input name="sid" type="text" placeholder="Student ID">
+
+    <div>
+        <div class="help-item">
+            <div class="help-block available"></div>
+            <div class="help-text">Available</div>
         </div>
-        <div class="ui input">
-            <input name="name" type="text" placeholder="Name">
+        <div class="help-item">
+            <div class="help-block unavailable"></div>
+            <div class="help-text">Unavailable</div>
         </div>
-        <br><br>
-        <div class="ui input">
-            <input name="sid" type="text" placeholder="Student ID">
-        </div>
-        <div class="ui input">
-            <input name="name" type="text" placeholder="Name">
-        </div>
-        <br><br>
-        <div class="ui input">
-            <input name="sid" type="text" placeholder="Student ID">
-        </div>
-        <div class="ui input">
-            <input name="name" type="text" placeholder="Name">
+        <div class="help-item">
+            <div class="help-block selected"></div>
+            <div class="help-text">Your Reservation</div>
         </div>
     </div>
+    <br><br>
+
+    <div style="padding-top:10px; text-align:center;">
+        <div>
+            <div class="ui input">
+                <input name="sid" type="text" placeholder="Student ID">
+            </div>
+            <div class="ui input">
+                <input name="name" type="text" placeholder="Name">
+           </div>
+        </div>
+        <br>
+        <div>
+            <div class="ui input">
+                <input name="sid" type="text" placeholder="Student ID">
+            </div>
+            <div class="ui input">
+                <input name="name" type="text" placeholder="Name">
+           </div>
+        </div>
+        <br>
+        <div>
+            <div class="ui input">
+                <input name="sid" type="text" placeholder="Student ID">
+            </div>
+            <div class="ui input">
+                <input name="name" type="text" placeholder="Name">
+           </div>
+        </div>
+        <br><br>
+        <button type="submit" class="ui primary button"> Submit </button>
+        <br>
+    </div>
     <br>
-    <button type="submit" class="ui primary button"> Submit </button>
     </form>
   </div>
 </div>

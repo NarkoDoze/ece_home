@@ -20,3 +20,8 @@ td {
   background-color: #0088ff !important;
   color: white !important;
 }
+
+.help_item {
+  display: inline-block;
+  margin-right: 10px;
+}

@@ -2,7 +2,8 @@
 #logo-main {
   display: block;
   margin: 0 auto;
-  padding-top: 3vh;
+  padding-top: 4vh;
+  padding-bottom: 3vh;
 }
 #navbar-primary.navbar-default {
   background: transparent;
@@ -174,4 +175,27 @@ td.reserved {
 }
 table tbody tr:first-child td {
   border-top: 1px solid #d8d8d8;
+}
+
+.help-item {
+  display: inline-block;
+  margin-right:10px;
+}
+.help-item .help-block {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 0 0 5px;
+}
+.help-item .help-text {
+  display: inline-block;
+}
+.help-item .available {
+  background-color: #d8d8d8;
+}
+.help-item .unavailable {
+  background-color: #595959;
+}
+.help-item .selected {
+  background-color: #0088ff;
 }
