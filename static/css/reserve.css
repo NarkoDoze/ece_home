@@ -1,0 +1,22 @@
+.container{
+  margin: 10vh 10%;
+  width: 80% !important;
+}
+
+
+#reservation_time{
+  width:100%;
+}
+
+td {
+  border: 1.5px solid white;
+}
+
+.time-number {
+  padding-left: 1.2%;
+}
+
+.label, .ui.tag.label:before, .ui.tag.labels .label:before {
+  background-color: #0088ff !important;
+  color: white !important;
+}
