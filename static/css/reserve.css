@@ -25,3 +25,16 @@ td {
   display: inline-block;
   margin-right: 10px;
 }
+
+#confirm-box{
+  width: 80%;
+  margin: 10vh 7%;
+  position: absolute;
+  z-index: 1000;
+  display: none;
+
+}
+
+.button{
+  background-color: #0088ff !important;
+}
