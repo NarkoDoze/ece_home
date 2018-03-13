@@ -12,14 +12,28 @@ def sroom_rsv(request, idx):
     params = {'title': 'StudyRoom Reservation'}
     if request.method == "POST":
         query = dict(request.POST)
-        if not {'sid': query['sid'][0], 'name': query['name'][0]} in index.sidIndex:
-            params['error'] = query['name'][0] + "(" + query['sid'][0] + ")" + " is not registered."
+        # check if the input is valid
+        if len(query['sid'][0]) == 0 or len(query['sid'][1]) == 0 or len(query['sid'][2]) == 0:
+            params['error'] = "Please enter student ID."
             return render(request, 'error.html', params)
-        if not {'sid': query['sid'][1], 'name': query['name'][1]} in index.sidIndex:
-            params['error'] = query['name'][1] + "(" + query['sid'][1] + ")" + " is not registered."
-            return render(request, 'error.html', params)
-        if query['sid'][0] == query['sid'][1]:
+        if len(set([x for x in query['sid'] if query['sid'].count(x) > 1])) != 0:
             params['error'] = "You cannot use same student ID."
+            return render(request, 'error.html', params)
+        # check in DB
+        params['error'] = ""
+        error_detect = False
+        if not {'sid': query['sid'][0], 'name': query['name'][0]} in index.sidIndex:
+            params['error'] += query['name'][0] + "(" + query['sid'][0] + "), "
+            error_detect = True
+        if not {'sid': query['sid'][1], 'name': query['name'][1]} in index.sidIndex:
+            params['error'] += query['name'][1] + "(" + query['sid'][1] + "), "
+            error_detect = True
+        if not {'sid': query['sid'][2], 'name': query['name'][2]} in index.sidIndex:
+            params['error'] += query['name'][2] + "(" + query['sid'][2] + "), "
+            error_detect = True
+        if error_detect:
+            params['error'] = params['error'][:-2]
+            params['error'] += " is not registered."
             return render(request, 'error.html', params)
 
         selectDate = []
