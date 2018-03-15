@@ -32,9 +32,8 @@ td {
   position: absolute;
   z-index: 1000;
   display: none;
-
 }
 
-.button{
-  background-color: #0088ff !important;
-}
+/*.button{*/
+  /*background-color: #0088ff !important;*/
+/*}*/

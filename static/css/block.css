@@ -199,3 +199,19 @@ table tbody tr:first-child td {
 .help-item .selected {
   background-color: #0088ff;
 }
+
+.footer-container {
+  width: 100%;
+  background-color: grey;
+  height: 23vh;
+  color : white;
+  text-align: center;
+  margin-top: 30vh;
+  padding-top: 3vh;
+}
+
+#footer-logo {
+    display: inline-block;
+    width: 10%;
+    padding-bottom: 3vh;
+}

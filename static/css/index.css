@@ -22,16 +22,6 @@
 
 }
 
-.footer-container {
-  width: 100%;
-  background-color: grey;
-  height: 23vh;
-  color : white;
-  text-align: center;
-  margin-top: 30vh;
-  padding-top: 3vh;
-}
-
 .ui.table {
   border-top: .2em solid #0088ff !important;
   margin-bottom: 5vh !important;
@@ -39,12 +29,6 @@
 
 th, td {
   padding: 3vh;
-}
-
-#footer-logo {
-    display: inline-block;
-    width: 10%;
-    padding-bottom: 3vh;
 }
 
 .banner {
