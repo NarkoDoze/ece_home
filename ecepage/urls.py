@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'', include('home.urls')),
     url(r'', include('notice.urls')),
     url(r'', include('studyroom.urls')),
+    url(r'', include('about.urls')),
 ]
