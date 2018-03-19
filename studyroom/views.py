@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from . import index
 import datetime
 
@@ -126,11 +127,51 @@ def sroom_rsv(request, idx):
                 today += datetime.timedelta(days=1)
             params['table'] = output
             params['var'] = sroom['var']
+            print(params)
             return render(request, 'studyroom/reserve.html', params)
 
     return render(request, 'example.html', params)
 
 def sroom_chk(request):
     params = {'title': 'StudyRoom Checking'}
-    # TODO: Get student id and check it
-    return render(request, 'example.html', params)
+    if request.method == "POST":
+        query = dict(request.POST)
+        if len(query['sid'][0]) == 0:
+            params['error'] = "Please enter student ID."
+            return render(request, 'error.html', params)
+        if not {'sid': query['sid'][0], 'name': query['name'][0]} in index.sidIndex:
+            params['error'] = query['name'][0] + "(" + query['sid'][0] + ") is not registered."
+            return render(request, 'error.html', params)
+            
+        today = datetime.date.today()
+        after = today + datetime.timedelta(days=3)
+        output = []
+        for sroom in index.sroomIndex:
+            today = datetime.date.today()
+            after = today + datetime.timedelta(days=3)
+            params['name'] = sroom['name']
+            rsvlist = sroom['model'].objects.filter(
+                reserved__range=(today, after)
+            )
+            while today < after:
+                check = [0] * 24
+                for rsv in list(rsvlist):
+                    rsvDate = datetime.date(rsv.reserved.year, rsv.reserved.month, rsv.reserved.day)
+                    if today == rsvDate:
+                        check[rsv.reserved.hour] = 1
+                checkenum = []
+                for i, c in enumerate(check):
+                    checkenum.append({"check": c, "id": i})
+                output.append({
+                    "name": today.strftime("%Y-%m-%d"),
+                    "heatmap": checkenum
+                })
+                today += datetime.timedelta(days=1)
+        params['table'] = output
+        params['var'] = sroom['var']
+
+        print(params)
+        return render(request, "studyroom/check_result.html", params)
+
+    return render(request, 'studyroom/check.html', params)
+

@@ -1,0 +1,19 @@
+{% extends 'block.html' %}
+{% load staticfiles %}
+{% block content %}
+<div>
+    <h1>{{ title }}</h1>
+    <form method="post" action="/studyroom/check">
+    {% csrf_token %}
+    <div style="padding-top:10px;">
+        <div class="ui input">
+            <input name="sid" type="text" placeholder="Student ID">
+        </div>
+        <div class="ui input">
+            <input name="name" type="text" placeholder="Name">
+        </div>
+    </div>
+    <button id="submit-btn" type="submit" class="ui primary button"> Submit </button>
+    </form>
+</div>
+{% endblock %}

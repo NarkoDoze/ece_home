@@ -173,6 +173,16 @@ td.unavailable {
 td.reserved {
   background-color: #d8d8d8;
 }
+td.reserved_nclk {
+  background-color: #d8d8d8;
+}
+td.selected_nclk {
+  background-color: #0088ff;
+}
+td.unavailable_nclk {
+  background-color: #595959;
+}
+
 table tbody tr:first-child td {
   border-top: 1px solid #d8d8d8;
 }
