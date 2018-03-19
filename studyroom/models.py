@@ -4,3 +4,8 @@ from django.db import models
 class Sroom1(models.Model):
     reserved = models.DateTimeField()
     sid = models.TextField()
+
+class Sroom2(models.Model):
+    reserved = models.DateTimeField()
+    sid = models.TextField()
+
