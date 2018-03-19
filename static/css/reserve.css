@@ -34,6 +34,10 @@ td {
   display: none;
 }
 
+#reserve-btn {
+  background-color: #0088ff !important;
+}
+
 /*.button{*/
   /*background-color: #0088ff !important;*/
 /*}*/

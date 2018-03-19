@@ -213,7 +213,7 @@ table tbody tr:first-child td {
 .footer-container {
   width: 100%;
   background-color: grey;
-  height: 23vh;
+  height: 20vh;
   color : white;
   text-align: center;
   margin-top: 30vh;
@@ -222,6 +222,6 @@ table tbody tr:first-child td {
 
 #footer-logo {
     display: inline-block;
-    width: 10%;
-    padding-bottom: 3vh;
+    width: 8%;
+    padding-bottom: 2vh;
 }
