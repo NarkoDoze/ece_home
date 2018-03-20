@@ -18,21 +18,18 @@
     {% csrf_token %}
     <br>
     <div class="ui raised very padded text segment" id="confirm-box">
-        <div class="header">
+        <h2 class="ui floated header">
             Study Room Rules
-        </div>
-        <div class="content">
-            <div class="description">
-                <p>1. 스터디룸 이용 규칙은 기본적으로 LG Software Lab 이용 규칙을 따릅니다.<br>
-                    Study room rules are based on LG Software Lab rules.</p>
-                <p>2. 스터디룸을 이용 후에는 뒷정리를 철저히 합니다.
-                    (예: 마커와 지우개 원위치, 냉난방기 끄기, 의자 정렬하기) <br>
-                    Make the study room clean after use.
-                    (e.g: Placing markers and erasers at original place, turn off air conditioner, arrange the chairs etc.)</p>
-                <p>3. ECE 학생회에서 LG Software Lab 스터디룸 관리를 위하여, 위 수칙 위반시에 예약자 확인 후 스터디룸 이용이 제한될 수 있습니다.<br>
-                    If rules are violated, ECE student council could restrict the use of study rooms.</p>
-            </div>
-        </div>
+        </h2>
+        <div class="ui clearing divider"></div>
+        <p>1. 스터디룸 이용 규칙은 기본적으로 LG Software Lab 이용 규칙을 따릅니다.<br>
+            Study room rules are based on LG Software Lab rules.</p>
+        <p>2. 스터디룸을 이용 후에는 뒷정리를 철저히 합니다.
+            (예: 마커와 지우개 원위치, 냉난방기 끄기, 의자 정렬하기) <br>
+            Make the study room clean after use.
+            (e.g: Placing markers and erasers at original place, turn off air conditioner, arrange the chairs etc.)</p>
+        <p>3. ECE 학생회에서 LG Software Lab 스터디룸 관리를 위하여, 위 수칙 위반시에 예약자 확인 후 스터디룸 이용이 제한될 수 있습니다.<br>
+            If rules are violated, ECE student council could restrict the use of study rooms.</p>
         <br>
         <div class="actions">
             <div class="ui black deny button" id="close-confirm-btn">
