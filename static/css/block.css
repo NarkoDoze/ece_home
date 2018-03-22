@@ -19,13 +19,15 @@
 
 }
 #navbar-primary.navbar-default .navbar-nav > li > a {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 2vw;
+  padding-right: 2vw;
   color: white;
   font-family: comic sans;
   font-stretch: expanded;
   letter-spacing: 2px;
 }
+
+
 .listnum {
     float: right;
 }
@@ -224,4 +226,21 @@ table tbody tr:first-child td {
     display: inline-block;
     width: 8%;
     padding-bottom: 2vh;
+}
+
+
+.white{
+  color: white !important;
+  font-family: comic sans;
+  font-stretch: expanded;
+  letter-spacing: 2px;
+}
+
+.ui.dropdown{
+  padding: 0 2vw;
+}
+
+
+.menu > .item > a {
+  color: grey !important;
 }
