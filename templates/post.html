@@ -1,0 +1,26 @@
+{% extends 'block.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="ui text justified container">
+        <br>
+        <table class="ui blue striped table">
+            <thead>
+            <tr>
+                <th colspan="2">{{ post.title }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Author : {{ post.author }}</td>
+                <td>Time : {{ post.created_at }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center;">
+            {% if post.img_path != "" %}
+                <img src="{{ post.img_path }}" width="500">
+            {% endif %}
+        </div>
+        <br><br>
+    </div>
+{% endblock %}

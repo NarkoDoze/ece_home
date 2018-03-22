@@ -6,11 +6,19 @@
     <div class="ui items">
         {% for post in recent %}
             <div class="item">
-                <div class="image">
-                    <img src="/static/img/test.png">
+                <div class="thumbnail-wrapper" style="margin-right: 40px;">
+                    <div class="thumbnail">
+                        <div class="centered">
+                            {% if post.img_path != "" %}
+                                <img src="{{ post.img_path }}" height="145" width="175" style="max-width: 100%; height: auto;">
+                            {% else %}
+                                <img src="/static/img/test.png">
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
-                <div class="content">
-                    <a class="header">{{ post.title }}</a>
+                <div class="content" style="margin-top: 20px;">
+                    <a href="{{ link }}/{{ post.id }}" class="header">{{ post.title }}</a>
                     <div class="meta">
                         <span>{{ post.content }}</span>
                     </div>
@@ -25,11 +33,15 @@
         {% endfor %}
     </div>
     <div class="ui pagination menu listnum">
-        <a class="active item">1</a>
-        <div class="disabled item">...</div>
-        <a class="item">10</a>
-        <a class="item">11</a>
-        <a class="item">12</a>
+        {% for item in order %}
+            {% if lo == item %}
+                <a class="active item">{{ item }}</a>
+            {% elif "..." == item %}
+                <div class="disabled item">...</div>
+            {% else %}
+                <a class="item" href="{{ link }}?lo={{ item }}">{{ item }}</a>
+            {% endif %}
+        {% endfor %}
     </div>
     </div>
 {% endblock %}
