@@ -58,7 +58,6 @@ def sroom_rsv(request, idx):
                 for rsv in rsvlist:
                     rsvTime = datetime.datetime(rsv.reserved.year, rsv.reserved.month, rsv.reserved.day, rsv.reserved.hour)
                     if rsvTime in selectDate:
-                        print("HEY2")
                         params['error'] = "잘못된 쿼리입니다."
                         return render(request, 'error.html', params)
                 rsvlist = sroom['model'].objects.filter(
@@ -127,7 +126,6 @@ def sroom_rsv(request, idx):
                 today += datetime.timedelta(days=1)
             params['table'] = output
             params['var'] = sroom['var']
-            print(params)
             return render(request, 'studyroom/reserve.html', params)
 
     return render(request, 'example.html', params)
@@ -168,10 +166,6 @@ def sroom_chk(request):
                 })
                 today += datetime.timedelta(days=1)
         params['table'] = output
-        params['var'] = sroom['var']
-
-        print(params)
         return render(request, "studyroom/check_result.html", params)
-
     return render(request, 'studyroom/check.html', params)
 
