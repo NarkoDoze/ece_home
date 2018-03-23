@@ -5,7 +5,7 @@
     <h1>{{ title }}</h1>
     <form method="post" action="/studyroom/check">
     {% csrf_token %}
-    <div style="padding-top:10px;">
+    <div class="ui container" style="padding-top:10px;">
         <div class="ui input">
             <input name="sid" type="text" placeholder="Student ID">
         </div>

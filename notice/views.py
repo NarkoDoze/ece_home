@@ -3,7 +3,7 @@ from .models import Post
 
 # Create your views here.
 def announce_home(request):
-    params = {'title': 'Notice'}
+    params = {'title': 'Announcement'}
     Postlen = len(Post.objects.all())
     Postlen = Postlen // 4 + 1 if Postlen % 4 else Postlen // 4
     if Postlen >= 4:

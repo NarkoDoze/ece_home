@@ -6,10 +6,10 @@
 </head>
 <div class="container">
   <div class="ui top attached tabular menu">
-    <a class="active item" href="/studyroom/sroom1">
+    <a class="{% if var == 'sroom1' %} active {% else %} inactive {% endif %} item" href="/studyroom/sroom1">
       Study room 1
     </a>
-    <a class="item" href="/studyroom/sroom2">
+    <a class="{% if var == 'sroom2' %} active {% else %} inactive {% endif %} item" href="/studyroom/sroom2">
       Study room 2
     </a>
   </div>
