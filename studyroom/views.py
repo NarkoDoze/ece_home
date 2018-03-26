@@ -131,7 +131,7 @@ def sroom_rsv(request, idx):
     return render(request, 'example.html', params)
 
 def sroom_chk(request):
-    params = {'title': 'StudyRoom Checking'}
+    params = {'title': 'Reservation Check'}
     if request.method == "POST":
         query = dict(request.POST)
         if len(query['sid'][0]) == 0:
