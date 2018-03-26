@@ -1,11 +1,13 @@
 {% extends 'block.html' %}
 {% load staticfiles %}
 {% block content %}
-<div>
-    <h1>{{ title }}</h1>
+<div class="ui text container">
+    <br>
+    <h2 class="ui dividing header">{{ title }}</h2>
     <form method="post" action="/studyroom/check">
     {% csrf_token %}
-    <div class="ui container" style="padding-top:10px;">
+    <div class=""style="padding-top:10px;">
+        <br>
         <div class="ui input">
             <input name="sid" type="text" placeholder="Student ID">
         </div>
@@ -13,6 +15,7 @@
             <input name="name" type="text" placeholder="Name">
         </div>
     </div>
+    <br>
     <button id="submit-btn" type="submit" class="ui primary button"> Submit </button>
     </form>
 </div>
