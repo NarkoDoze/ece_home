@@ -1,20 +1,35 @@
 {% extends 'block.html' %}
 {% load staticfiles %}
 {% block content %}
+<head>
+  <link rel="stylesheet" href="/static/css/reserve.css">
+</head>
+
 <div class="ui text container">
     <br>
     <h2 class="ui dividing header">{{ title }}</h2>
     <form method="post" action="/studyroom/check">
     {% csrf_token %}
-    <div class=""style="padding-top:10px;">
+
+      <div class="field">
+        <label>Student ID</label>
         <br>
-        <div class="ui input">
+        <div class="ui left icon input input-length-longer">
             <input name="sid" type="text" placeholder="Student ID">
+            <i class="id card icon"></i>
+
         </div>
-        <div class="ui input">
+      </div>
+      <br>
+      <div class="field">
+        <label>Name</label>
+
+        <br>
+        <div class="ui left icon input input-length-longer">
             <input name="name" type="text" placeholder="Name">
+            <i class="user icon"></i>
         </div>
-    </div>
+      </div>
     <br>
     <button id="submit-btn" type="submit" class="ui primary button"> Submit </button>
     </form>

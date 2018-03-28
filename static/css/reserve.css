@@ -33,3 +33,14 @@ td {
   z-index: 1000;
   display: none;
 }
+
+
+.input-length-longer{
+  width: 50%;
+}
+
+
+
+#submit-btn{
+  margin-right: : 5%;
+}
