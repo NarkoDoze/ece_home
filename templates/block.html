@@ -7,13 +7,13 @@
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.2.10/dist/semantic.min.css">
-    <link rel="stylesheet" href="/static/css/block.css">
-    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link rel="stylesheet" href="{% static "css/block.css" %}">
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
 </head>
 <body>
 <header role="banner">
     <a href="/home">
-        <img id="logo-main" src="/static/logo/main3.png" width="200px" alt="Logo Thing main logo">
+        <img id="logo-main" src="{% static "logo/main3.png" %}" width="200px" alt="Logo Thing main logo">
     </a>
     <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -69,7 +69,7 @@
     {% endblock %}
 
 <footer class="footer-container">
-  <img id="footer-logo" src="/static/logo/main3.png">
+  <img id="footer-logo" src="{% static "logo/main3.png" %}">
   <p>Contact : eceunist@gmail.comㅤㅤㅤ　　Location : 106 305-3 <br>
   Developers : TaekSoo Kim | YeonJun Kim | Jin Yang <br>
   Version : ver 0.0</p>
@@ -81,8 +81,8 @@
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.2.10/dist/semantic.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/static/javascript/reserve.js"></script>
-<script type="text/javascript" src="/static/javascript/check.js"></script>
+<script type="text/javascript" src="{% static "javascript/reserve.js" %}"></script>
+<script type="text/javascript" src="{% static "javascript/check.js" %}"></script>
 <script>
     $(document).ready(function() {
         $('.reserved').click(function() {

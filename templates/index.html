@@ -1,9 +1,10 @@
+{% extends 'block.html' %}
+{% load staticfiles %}
+{% block content %}
 <head>
-  <link rel="stylesheet" href="/static/css/index.css">
+  <link rel="stylesheet" href="{% static "css/index.css" %}">
 
 </head>
-{% extends 'block.html' %}
-{% block content %}
 <main role="main" style="margin-left: 10%; margin-right: 10%;">
   <div class="main-contants">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -68,7 +69,7 @@
       <!--
       <h3>Q & A</h3>
         <div style="text-align: center;">
-          <img scr="/static/img/caution.png" width="300px" height="auto"/>
+          <img scr="{% static "img/caution.png"%}" width="300px" height="auto"/>
           <br><br>
           <h2 style="color:#5d5d5d">UNDER CONSTRUCTION</h2>
         </div>

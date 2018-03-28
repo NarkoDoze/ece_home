@@ -7,8 +7,13 @@ def index(request):
     params = {'title': 'ECE Student Council AROUND'}
 
     events = Event.objects.all().order_by('-id')[:3]
-    params['firstEvent'] = events[0]
-    params['events'] = events[1:]
+    if(len(events) > 1):
+        params['firstEvent'] = events[0]
+        params['events'] = events[1:]
+    elif(len(events) == 1):
+        params['firstEvent'] = events[0]
+    else:
+        params['firstEvent'] = Event()
 
     posts = Post.objects.all().order_by('-id')[:5]
     for post in posts:
