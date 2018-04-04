@@ -19,7 +19,7 @@
         <div class="carousel-inner">
             <div class="item active">
                 <div id="centered">
-                    <img src="{{ firstEvent.img_path }}" style="max-width: 100%;height: auto;">
+                    <img src="{% static firstEvent.img_path %}" style="max-width: 100%;height: auto;">
                 </div>
                 <div class="carousel-caption">
                     <h3>{{ firstEvent.title }}</h3>
@@ -29,7 +29,7 @@
             {% for event in events %}
                 <div class="item">
                     <div id="centered">
-                        <img src="{{ event.img_path }}" style="max-width: 100%;height: auto;">
+                        <img src="{% static event.img_path %}" style="max-width: 100%;height: auto;">
                     </div>
                     <div class="carousel-caption">
                         <h3>{{ event.title }}</h3>

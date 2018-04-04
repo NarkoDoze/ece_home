@@ -18,7 +18,7 @@
         </table>
         <div style="text-align: center;">
             {% if post.img_path != "" %}
-                <img src="{{ post.img_path }}" width="500">
+                <img src="{% static post.img_path %}" width="500">
             {% endif %}
         </div>
         <br><br>

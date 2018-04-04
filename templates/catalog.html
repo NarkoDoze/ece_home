@@ -10,7 +10,7 @@
                     <div class="thumbnail">
                         <div class="centered">
                             {% if post.img_path != "" %}
-                                <img src="{{ post.img_path }}" height="145" width="175" style="max-width: 100%; height: auto;">
+                                <img src="{% static post.img_path %}" height="145" width="175" style="max-width: 100%; height: auto;">
                             {% else %}
                                 <img src="{% static "img/test.png" %}">
                             {% endif %}
