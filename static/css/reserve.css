@@ -6,7 +6,13 @@
 
 #reservation_time{
   width:100%;
+  overflow:scroll;
 }
+
+.scroll{
+  overflow:scroll;
+}
+
 
 td {
   border: 1.5px solid white;
@@ -44,3 +50,15 @@ td {
 #submit-btn{
   margin-right: : 5%;
 }
+
+/*
+.time-block{
+  width: 2vw;
+  height: 2vh;
+  color: block;
+} */
+
+
+/* @media ( max-width: 1023px ) {
+  B
+} */

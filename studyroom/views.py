@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from . import index
 import datetime
 
+
 # Create your views here.
 def sroom_home(request):
     params = {'title': 'StudyRoom Reservation'}
@@ -141,7 +142,7 @@ def sroom_chk(request):
         if not {'sid': query['sid'][0], 'name': query['name'][0]} in index.sidIndex:
             params['error'] = query['name'][0] + "(" + query['sid'][0] + ") is not registered."
             return render(request, 'error.html', params)
-            
+
         today = datetime.date.today()
         after = today + datetime.timedelta(days=3)
         output = []
@@ -169,4 +170,3 @@ def sroom_chk(request):
         params['table'] = output
         return render(request, "studyroom/check_result.html", params)
     return render(request, 'studyroom/check.html', params)
-

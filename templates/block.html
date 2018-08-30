@@ -84,19 +84,7 @@
 <script type="text/javascript" src="{% static "javascript/reserve.js" %}"></script>
 <script type="text/javascript" src="{% static "javascript/check.js" %}"></script>
 <script>
-    $(document).ready(function() {
-        $('.reserved').click(function() {
-            if(this.className == "reserved"){
-                this.className = "selected";
-                this.innerHTML = "<input type='hidden' name='select' value='" + this.getAttribute('name')  + "'/>";
-            }
-            else {
-                this.className = "reserved";
-                this.innerHTML = "";
-            }
-        });
-    });
-
+    
 
     $('.ui.dropdown')
       .dropdown()
